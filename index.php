@@ -17,11 +17,11 @@
           <h2 class="title">Sign in</h2>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Email" name="police-email" id="police-email" required />
+            <input type="email" placeholder="Email" name="registered-email" id="email" required />
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Password" name="police-password" id="police-password" required />
+            <input type="password" placeholder="Password" name="registered-password" id="password" required />
           </div>
           <div class="input-field">
             <i class="fas fa-key"></i>

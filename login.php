@@ -14,11 +14,11 @@ if (isset($_SESSION['email'])) {
 
     session_start();
     $_SESSION['email'] = $sem;
-    header('location:dashboard.php');
+    header('location:index.php');
 
-} elseif (isset($_POST['police-email'])) {
-    $pem = $_POST['police-email'];
-    $ppass = $_POST['police-password'];
+} elseif (isset($_POST['registered-email'])) {
+    $pem = $_POST['registered-email'];
+    $ppass = $_POST['registered-password'];
 
     $pcode = $_POST['code'];
 
@@ -32,11 +32,11 @@ if (isset($_SESSION['email'])) {
 
     if ($dbemail == $pem && $dbpassword == $ppass && $pcode == null) {
         session_start();
-        $_SESSION['police-email'] = $pem;
+        $_SESSION['registered-email'] = $pem;
 
         header('location:dashboard.php');
-    } elseif ($pcode == '5t@11') {
-        $query1 = "SELECT Email, Password FROM staff WHERE Email = ?";
+    } elseif ($pcode == 'SCstaff') {
+        $query1 = "SELECT email, password FROM staff WHERE email = ?";
         $stmt = $conn->prepare($query1);
         $stmt->bind_param("s", $pem);
         $stmt->execute();
@@ -46,7 +46,7 @@ if (isset($_SESSION['email'])) {
 
         if ($dbemail1 == $pem && $dbpassword1 == $ppass) {
 
-            $query2 = "SELECT Name FROM staff WHERE Email = ?";
+            $query2 = "SELECT name FROM staff WHERE email = ?";
             $stmt = $conn->prepare($query2);
             $stmt->bind_param("s", $dbemail1);
             $stmt->execute();
@@ -55,7 +55,7 @@ if (isset($_SESSION['email'])) {
             $stmt->close();
 
             session_start();
-            $_SESSION['police-email'] = $pem;
+            $_SESSION['registered-email'] = $pem;
             $_SESSION['name'] = $dbname;
             header('location:./police/staff.php');
         }
@@ -74,7 +74,7 @@ if (isset($_SESSION['email'])) {
             </head>
 
             <body>
-                <a href="index.html">Return</a>
+                <a href="index.php">Return</a>
                 <script>alert("Theres no account with this Email. Sign-in");</script>
             </body>
 
