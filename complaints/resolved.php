@@ -69,7 +69,7 @@ $trimmedMail = $_SESSION['registered-email'];
                             <?php echo $row['Reg_time'] ?>
                         </td>
                         <td scope="row" class="tab">
-                            <?php echo $row['staff'] ?>
+                            <?php echo $row['police'] ?>
                         </td>
                         <td scope="row" class="tab">
                             <?php echo $row['status'] ?>

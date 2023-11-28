@@ -15,5 +15,5 @@ $id = $_GET['id'];
 
 $resolvequery = mysqli_query($conn, "UPDATE complaints SET status = 'Resolved' WHERE `complaints`.`id` = $id");
 
-header('location:police_staff.php');
+header('location:police_dashboard.php');
 ?>

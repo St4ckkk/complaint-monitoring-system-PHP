@@ -5,13 +5,13 @@ require_once '../database/connection.php';
 $em = $_SESSION['name'];
 
 
-$result = mysqli_query($conn, "SELECT * FROM complaints where staff= '$em' ");
+$result = mysqli_query($conn, "SELECT * FROM complaints where police= '$em' ");
 $num = mysqli_num_rows($result);
 
-$result1 = mysqli_query($conn, "SELECT * FROM complaints where staff= '$em' AND status='Resolved' ");
+$result1 = mysqli_query($conn, "SELECT * FROM complaints where police= '$em' AND status='Resolved' ");
 $num1 = mysqli_num_rows($result1);
 
-$result2 = mysqli_query($conn, "SELECT * FROM complaints where staff= '$em' AND status='Pending' ");
+$result2 = mysqli_query($conn, "SELECT * FROM complaints where police= '$em' AND status='Pending' ");
 $num2 = mysqli_num_rows($result2);
 
 ?>

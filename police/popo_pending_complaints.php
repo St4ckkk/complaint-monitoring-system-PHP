@@ -39,7 +39,7 @@
 
                 $em = $_SESSION['name'];
 
-                $sql = "SELECT * FROM complaints where staff= '$em' AND status='Pending' ";
+                $sql = "SELECT * FROM complaints where police= '$em' AND status='Pending' ";
                 $result = mysqli_query($conn, $sql);
                 $num = mysqli_num_rows($result);
 
@@ -48,7 +48,7 @@
                     <tr>
 
                         <td scope="row" class="id">
-                            <?php echo $row['C_Id'] ?>
+                            <?php echo $row['id'] ?>
                         </td>
                         <td scope="row" class="tab">
                             <?php echo $row['Mob'] ?>
@@ -69,13 +69,19 @@
                             <?php echo $row['Reg_time'] ?>
                         </td>
                         <td scope="row" class="tab">
-                            <?php echo $row['staff'] ?>
+                            <?php echo $row['police'] ?>
                         </td>
                         <td scope="row" class="tab">
                             <?php echo $row['status'] ?>
                         </td>
-                        <td class="tab"><a href="resolved.php?id=<?php echo $row['C_Id']; ?>"><button
-                                    class='ress'>Resolve</button></a></td>
+                        <td class="tab" colspan="2">
+                            <!-- Display Resolve button -->
+                            <?php if ($row['status'] == "Resolved"): ?>
+                                <a href="resolved.php?id=<?php echo $row['id']; ?>"><button class='alress'>Resolved</button></a>
+                            <?php else: ?>
+                                <a href="resolved.php?id=<?php echo $row['id']; ?>"><button class='ress'>Resolve</button></a>
+                            <?php endif; ?>
+                        </td>
                     </tr>
                     <?php
                 }

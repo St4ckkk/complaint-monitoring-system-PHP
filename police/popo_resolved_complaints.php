@@ -37,7 +37,7 @@
 
                 $em = $_SESSION['name'];
 
-                $sql = "SELECT * FROM complaints where staff= '$em' AND status='Resolved' ";
+                $sql = "SELECT * FROM complaints where police= '$em' AND status='Resolved' ";
                 $result = mysqli_query($conn, $sql);
                 $num = mysqli_num_rows($result);
 
@@ -67,7 +67,7 @@
                             <?php echo $row['Reg_time'] ?>
                         </td>
                         <td scope="row" class="tab">
-                            <?php echo $row['staff'] ?>
+                            <?php echo $row['police'] ?>
                         </td>
                         <td scope="row" class="tab">
                             <?php echo $row['status'] ?>

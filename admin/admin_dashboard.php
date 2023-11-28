@@ -5,14 +5,24 @@ require_once '../database/connection.php';
 $em = $_SESSION['name'];
 
 
-$result = mysqli_query($conn, "SELECT * FROM complaints where staff= '$em' ");
+$result = mysqli_query($conn, "SELECT * FROM complaints");
 $num = mysqli_num_rows($result);
 
-$result1 = mysqli_query($conn, "SELECT * FROM complaints where staff= '$em' AND status='Resolved' ");
-$num1 = mysqli_num_rows($result1);
 
-$result2 = mysqli_query($conn, "SELECT * FROM complaints where staff= '$em' AND status='Pending' ");
-$num2 = mysqli_num_rows($result2);
+
+// Fetch the admin's full name from the database
+$adminInfoQuery = "SELECT full_name FROM admin LIMIT 1";
+$adminInfoResult = mysqli_query($conn, $adminInfoQuery);
+
+// Check if the query was successful and the result is not null
+if ($adminInfoResult && mysqli_num_rows($adminInfoResult) > 0) {
+    // Assuming the admin table has a column 'full_name'
+    $adminInfo = mysqli_fetch_assoc($adminInfoResult);
+    $adminFullName = $adminInfo['full_name'];
+} else {
+    // If there is no direct login for admin, display a generic welcome message or any other relevant information
+    $adminFullName = "Administrator";
+}
 
 ?>
 
@@ -40,7 +50,7 @@ $num2 = mysqli_num_rows($result2);
         </div>
         <div class="wtext">
             <p>Welcome,
-                <?php echo $_SESSION['name']; ?>
+                <?php echo $adminFullName; ?>
             </p>
         </div>
 
@@ -49,30 +59,12 @@ $num2 = mysqli_num_rows($result2);
                 <img src="../img/logo.png" alt="img">
             </div>
             <div class="dash-all">
-                <p><a href="popo_total_complaints.php">Total Complaints:
+                <p class="master"><a href="admin.php">Complaints:
                         <?php echo $num; ?>
                     </a></p>
-                <p><a href="popo_resolved_complaints.php">Resolved Complaints:
-                        <?php echo $num1; ?>
-                    </a></p>
-                <p><a href="popo_pending_complaints.php">Pending Complaints:
-                        <?php echo $num2; ?>
-                    </a></p>
-                <p class="master"><a href="#" onClick=mastercode()> Admin Access </a></p>
             </div>
         </div>
     </div>
-    <script>
-        function mastercode() {
-            var userInput = prompt("Enter the Master Code:");
-            if (userInput == "5261") {
-                window.location.href = "../admin/admin.php";
-            }
-            else {
-                alert("Dont try to overstep your boundaries🤡");
-            }
-        }
-    </script>
 </body>
 
 </html>

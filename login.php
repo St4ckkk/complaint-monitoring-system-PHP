@@ -36,7 +36,7 @@ if (isset($_SESSION['email'])) {
 
         header('location: user_dashboard.php');
     } elseif ($pcode == 'SCstaff') {
-        $query1 = "SELECT email, password FROM staff WHERE email = ?";
+        $query1 = "SELECT email, password FROM police WHERE email = ?";
         $stmt = $conn->prepare($query1);
         $stmt->bind_param("s", $pem);
         $stmt->execute();
@@ -46,7 +46,7 @@ if (isset($_SESSION['email'])) {
 
         if ($dbemail1 == $pem && $dbpassword1 == $ppass) {
 
-            $query2 = "SELECT name FROM staff WHERE email = ?";
+            $query2 = "SELECT name FROM police WHERE email = ?";
             $stmt = $conn->prepare($query2);
             $stmt->bind_param("s", $dbemail1);
             $stmt->execute();

@@ -14,12 +14,12 @@ $num2 = mysqli_num_rows($result2);
 $result3 = mysqli_query($conn, "SELECT * FROM complaints where Priority='High' ");
 $num3 = mysqli_num_rows($result3);
 
-$result4 = mysqli_query($conn, "SELECT * FROM complaints where staff='Unassigned' AND status='Pending'");
+$result4 = mysqli_query($conn, "SELECT * FROM complaints where police='Unassigned' AND status='Pending'");
 $num4 = mysqli_num_rows($result4);
 
-$sqlStaff = "SELECT * FROM staff";
-$resultStaff = mysqli_query($conn, $sqlStaff);
-$staffMembers = mysqli_fetch_all($resultStaff, MYSQLI_ASSOC);
+$sqlPolice = "SELECT * FROM police";
+$resultPolice = mysqli_query($conn, $sqlPolice);
+$policeMembers = mysqli_fetch_all($resultPolice, MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,9 +52,9 @@ $staffMembers = mysqli_fetch_all($resultStaff, MYSQLI_ASSOC);
             <p1>Unassigned Complaints:
                 <?php echo $num4; ?>
             </p1>
-            <a href="../logout.php">
+            <a href="admin_dashboard.php">
                 <button class="logb">
-                    Logout
+                    Return
                 </button>
             </a>
         </div>
@@ -79,7 +79,7 @@ $staffMembers = mysqli_fetch_all($resultStaff, MYSQLI_ASSOC);
                         <th>Priority</th>
                         <th>Description</th>
                         <th>Time of Registration</th>
-                        <th>Staff</th>
+                        <th>Police</th>
                         <th colspan="2">Status</th>
                     </tr>
                 </thead>
@@ -121,15 +121,15 @@ $staffMembers = mysqli_fetch_all($resultStaff, MYSQLI_ASSOC);
                             </td>
                             <td scope="row" class="tab">
                                 <?php
-                                if ($row['staff'] == 'Unassigned') {
+                                if ($row['police'] == 'Unassigned') {
                                     // Display dropdown for assigning police
                                     ?>
                                     <form action="assign_popo.php" method="post">
                                         <input type="hidden" name="complaint_id" value="<?php echo $row['id']; ?>">
-                                        <select name="staff_id">
-                                            <?php foreach ($staffMembers as $staff): ?>
-                                                <option value="<?php echo $staff['id']; ?>">
-                                                    <?php echo $staff['name']; ?>
+                                        <select name="police_id">
+                                            <?php foreach ($policeMembers as $police): ?>
+                                                <option value="<?php echo $police['id']; ?>">
+                                                    <?php echo $police['name']; ?>
                                                 </option>
                                             <?php endforeach; ?>
                                         </select>
@@ -138,15 +138,15 @@ $staffMembers = mysqli_fetch_all($resultStaff, MYSQLI_ASSOC);
                                     <?php
                                 } else {
                                     // Display assigned staff name
-                                    $assignedStaffQuery = "SELECT name FROM staff WHERE name = '{$row['staff']}'";
-                                    $assignedStaffResult = mysqli_query($conn, $assignedStaffQuery);
-                                    $assignedStaffInfo = mysqli_fetch_assoc($assignedStaffResult);
+                                    $assignedPoliceQuery = "SELECT name FROM police WHERE name = '{$row['police']}'";
+                                    $assignedPoliceResult = mysqli_query($conn, $assignedPoliceQuery);
+                                    $assignedPoliceInfo = mysqli_fetch_assoc($assignedPoliceResult);
 
-                                    $assignedStaffInfo = $assignedStaffInfo ?? [];
+                                    $assignedPoliceInfo = $assignedPoliceInfo ?? [];
 
-                                    if ($assignedStaffInfo) {
+                                    if ($assignedPoliceInfo) {
 
-                                        echo $assignedStaffInfo['name'];
+                                        echo $assignedPoliceInfo['name'];
                                     } else {
 
                                         echo "Unassigned";
