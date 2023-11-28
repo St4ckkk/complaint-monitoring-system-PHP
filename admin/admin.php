@@ -124,7 +124,7 @@ $staffMembers = mysqli_fetch_all($resultStaff, MYSQLI_ASSOC);
                                 if ($row['staff'] == 'Unassigned') {
                                     // Display dropdown for assigning police
                                     ?>
-                                    <form action="assign.php" method="post">
+                                    <form action="assign_popo.php" method="post">
                                         <input type="hidden" name="complaint_id" value="<?php echo $row['id']; ?>">
                                         <select name="staff_id">
                                             <?php foreach ($staffMembers as $staff): ?>

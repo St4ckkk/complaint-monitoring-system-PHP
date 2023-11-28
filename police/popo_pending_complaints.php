@@ -4,16 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Total complaints</title>
+    <title>Pending complaints</title>
     <link rel="stylesheet" href="../css/complaint.css">
 </head>
 
 <body>
     <div class="container">
         <div class="nav">
-            <p><a href="staff.php" class="hlink">SC-CMS</a></p>
-            <p1>All Complaints</p1>
-            <a href="../police/staff.php"><button class="logb">Return</button></a>
+
+            <p><a href="police_dashboard.php" class="hlink">SC-CMS</a></p>
+            <p1>Previous Complaints</p1>
+            <a href="police_dashboard.php"><button class="logb">Return</button></a>
         </div>
         <table class="com-table">
             <thead>
@@ -27,6 +28,7 @@
                     <th>Time of Registration</th>
                     <th>Staff</th>
                     <th colspan="2">Status</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,7 +39,7 @@
 
                 $em = $_SESSION['name'];
 
-                $sql = "SELECT * FROM complaints where staff= '$em' ";
+                $sql = "SELECT * FROM complaints where staff= '$em' AND status='Pending' ";
                 $result = mysqli_query($conn, $sql);
                 $num = mysqli_num_rows($result);
 
@@ -46,7 +48,7 @@
                     <tr>
 
                         <td scope="row" class="id">
-                            <?php echo $row['id'] ?>
+                            <?php echo $row['C_Id'] ?>
                         </td>
                         <td scope="row" class="tab">
                             <?php echo $row['Mob'] ?>
@@ -72,22 +74,10 @@
                         <td scope="row" class="tab">
                             <?php echo $row['status'] ?>
                         </td>
-                        <?php
-                        if ($row['status'] == "Resolved") {
-                            ?>
-                            <td class="tab"><a href="resolved.php?id=<?php echo $row['C_Id']; ?>"><button
-                                        class='alress'>Resolved</button></a></td>
-                            <?php
-                        }
-                        if ($row['status'] != "Resolved") {
-                            ?>
-                            <td class="tab"><a href="resolved.php?id=<?php echo $row['C_Id']; ?>"><button
-                                        class='ress'>Resolve</button></a></td>
-
-
-                        </tr>
-                        <?php
-                        }
+                        <td class="tab"><a href="resolved.php?id=<?php echo $row['C_Id']; ?>"><button
+                                    class='ress'>Resolve</button></a></td>
+                    </tr>
+                    <?php
                 }
                 ?>
             </tbody>

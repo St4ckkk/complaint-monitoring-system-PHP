@@ -11,9 +11,9 @@
 <body>
     <div class="container">
         <div class="nav">
-            <p><a href="staff.php" class="hlink">SC-CMS</a></p>
+            <p><a href="police_dashboard.php" class="hlink">SC-CMS</a></p>
             <p1>Resolved Complaints</p1>
-            <a href="staff.php"><button class="logb">Return</button></a>
+            <a href="police_dashboard.php"><button class="logb">Return</button></a>
         </div>
         <table class="com-table">
             <thead>
@@ -46,7 +46,7 @@
                     <tr>
 
                         <td scope="row" class="id">
-                            <?php echo $row['C_Id'] ?>
+                            <?php echo $row['id'] ?>
                         </td>
                         <td scope="row" class="tab">
                             <?php echo $row['Mob'] ?>
@@ -72,22 +72,16 @@
                         <td scope="row" class="tab">
                             <?php echo $row['status'] ?>
                         </td>
-                        <?php
-                        if ($row['status'] == "Resolved") {
-                            ?>
-                            <td class="tab"><a href="resolved.php?id=<?php echo $row['C_Id']; ?>"><button
-                                        class='alress'>Resolved</button></a></td>
-                            <?php
-                        }
-                        if ($row['status'] != "Resolved") {
-                            ?>
-                            <td class="tab"><a href="resolved.php?id=<?php echo $row['C_Id']; ?>"><button
-                                        class='ress'>Resolve</button></a></td>
-
-
-                        </tr>
-                        <?php
-                        }
+                        <td class="tab" colspan="2">
+                            <!-- Display Resolve button -->
+                            <?php if ($row['status'] == "Resolved"): ?>
+                                <a href="resolved.php?id=<?php echo $row['id']; ?>"><button class='alress'>Resolved</button></a>
+                            <?php else: ?>
+                                <a href="resolved.php?id=<?php echo $row['id']; ?>"><button class='ress'>Resolve</button></a>
+                            <?php endif; ?>
+                        </td>
+                    </tr>
+                    <?php
                 }
                 ?>
             </tbody>

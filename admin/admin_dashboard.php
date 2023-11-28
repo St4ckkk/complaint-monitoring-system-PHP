@@ -22,7 +22,7 @@ $num2 = mysqli_num_rows($result2);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Police - Dashboard</title>
+    <title>Admin - Dashboard</title>
     <link rel="stylesheet" href="../css/police.css">
     <link rel="shortcut icon" href="../favicon/complaint.ico" type="image/x-icon">
 </head>
@@ -46,16 +46,16 @@ $num2 = mysqli_num_rows($result2);
 
         <div class="dash-main">
             <div class="dash-img">
-                <img src="../img/form.jpg" alt="img">
+                <img src="../img/logo.png" alt="img">
             </div>
             <div class="dash-all">
-                <p><a href="stotal.php">Total Complaints:
+                <p><a href="popo_total_complaints.php">Total Complaints:
                         <?php echo $num; ?>
                     </a></p>
-                <p><a href="sreso.php">Resolved Complaints:
+                <p><a href="popo_resolved_complaints.php">Resolved Complaints:
                         <?php echo $num1; ?>
                     </a></p>
-                <p><a href="spending.php">Pending Complaints:
+                <p><a href="popo_pending_complaints.php">Pending Complaints:
                         <?php echo $num2; ?>
                     </a></p>
                 <p class="master"><a href="#" onClick=mastercode()> Admin Access </a></p>
@@ -66,7 +66,7 @@ $num2 = mysqli_num_rows($result2);
         function mastercode() {
             var userInput = prompt("Enter the Master Code:");
             if (userInput == "5261") {
-                window.location.href = "admin.php";
+                window.location.href = "../admin/admin.php";
             }
             else {
                 alert("Dont try to overstep your boundaries🤡");
