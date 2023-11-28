@@ -7,11 +7,13 @@ $em = $_SESSION['name'];
 
 $result = mysqli_query($conn, "SELECT * FROM complaints");
 $num = mysqli_num_rows($result);
+$result1 = mysqli_query($conn, "SELECT * FROM police");
+$num1 = mysqli_num_rows($result);
 
 
 
 // Fetch the admin's full name from the database
-$adminInfoQuery = "SELECT full_name FROM admin LIMIT 1";
+$adminInfoQuery = "SELECT full_name FROM admin LIMIT 1";    
 $adminInfoResult = mysqli_query($conn, $adminInfoQuery);
 
 // Check if the query was successful and the result is not null
@@ -61,7 +63,12 @@ if ($adminInfoResult && mysqli_num_rows($adminInfoResult) > 0) {
             <div class="dash-all">
                 <p class="master"><a href="admin.php">Complaints:
                         <?php echo $num; ?>
-                    </a></p>
+                    </a>
+                </p>
+                <p><a href="">Police:
+                        <?php echo $num1; ?>
+                    </a>
+                </p>
             </div>
         </div>
     </div>
