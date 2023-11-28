@@ -1,7 +1,8 @@
 <?php
 session_start();
 require_once '../database/connection.php';
-$trimmedMail = str_replace(".com", "", $_SESSION['registered-email']);
+$trimmedMail = $_SESSION['registered-email'];
+
 ?>
 
 <!DOCTYPE html>
@@ -17,9 +18,9 @@ $trimmedMail = str_replace(".com", "", $_SESSION['registered-email']);
 <body>
     <div class="container">
         <div class="nav">
-            <p><a href="../dashboard.php" class="hlink">VoxFlow</a></p>
-            <p1>Resolved Complaints</p1>
-            <a href="../destroy.php"><button class="logb">Logout</button></a>
+            <p><a href="../dashboard.php" class="hlink">SC-CMS</a></p>
+            <p>Resolved Complaints</p>
+            <a href="../dashboard.php"><button class="logb">Return</button></a>
         </div>
         <table class="com-table">
             <thead>
@@ -47,7 +48,7 @@ $trimmedMail = str_replace(".com", "", $_SESSION['registered-email']);
                     <tr>
 
                         <td scope="row" class="id">
-                            <?php echo $row['C_Id'] ?>
+                            <?php echo $row['id'] ?>
                         </td>
                         <td scope="row" class="tab">
                             <?php echo $row['Mob'] ?>

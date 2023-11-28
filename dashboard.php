@@ -14,7 +14,7 @@
 
         <div class="nav">
             <p>SC-CMS</p>
-            <a href="destroy.php">
+            <a href="logout.php">
                 <button class="logb">
                     Logout
                 </button>

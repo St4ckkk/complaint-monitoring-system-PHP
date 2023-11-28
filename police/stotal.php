@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Total complaints</title>
-    <link rel="stylesheet" href="../complaints/cstyle.css">
+    <link rel="stylesheet" href="../css/complaint.css">
 </head>
 
 <body>
     <div class="container">
         <div class="nav">
-            <p><a href="staff.php" class="hlink">VoxFlow</a></p>
+            <p><a href="staff.php" class="hlink">SC-CMS</a></p>
             <p1>All Complaints</p1>
             <a href="../destroy.php"><button class="logb">Logout</button></a>
         </div>
@@ -46,7 +46,7 @@
                     <tr>
 
                         <td scope="row" class="id">
-                            <?php echo $row['C_Id'] ?>
+                            <?php echo $row['id'] ?>
                         </td>
                         <td scope="row" class="tab">
                             <?php echo $row['Mob'] ?>
