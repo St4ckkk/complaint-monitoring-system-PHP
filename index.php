@@ -6,14 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="css/style.css" />
-  <title>SC-CIMS</title>
+  <link rel="shortcut icon" href="favicon/complaint.ico" type="image/x-icon" />
+  <title>SC-CMS</title>
 </head>
 
 <body>
   <div class="container">
     <div class="forms-container">
+
       <div class="signin-signup">
+
         <form action="login.php" class="sign-in-form" method="post">
+          <img src="img/logo.png" alt="" srcset="" height="200px">
           <h2 class="title">Sign in</h2>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
@@ -30,6 +34,7 @@
           <input type="submit" value="Login" class="btn solid" />
         </form>
         <form action="login.php" class="sign-up-form" method="post">
+          <img src="img/logo.png" alt="" srcset="" height="200px">
           <h2 class="title">Sign up</h2>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
@@ -47,32 +52,29 @@
     <div class="panels-container">
       <div class="panel left-panel">
         <div class="content">
-          <p1>SC-CIMS</p1>
+          <p1>SC-CMS</p1>
           <h3>New here ?</h3>
           <p>
-            Ready to be heard? Sign up to SC-CIMS now and let's address your
+            Ready to be heard? Sign up to SC-CMS now and let's address your
             concerns promptly and professionally.
           </p>
           <button class="btn transparent" id="sign-up-btn">Sign up</button>
         </div>
-        <!--
         <img src="img/log.svg" class="image" alt="" />
-        -->
       </div>
       <div class="panel right-panel">
         <div class="content">
-          <p1>SC-CIMS</p1>
+          <p1>SC-CMS</p1>
           <h3>One of us ?</h3>
           <p>
-            Empower justice at your fingertips with SC-CIMS – South Cotabato's
-            cutting-edge Complaint and Incident Management System. Your voice,
-            our priority – report seamlessly for a safer community.
+            Empower justice at your fingertips with SC-CMS – South Cotabato's
+            cutting-edge Complaint and Monitoring System. Your voice, our
+            priority – report seamlessly for a safer community.
           </p>
           <button class="btn transparent" id="sign-in-btn">Sign in</button>
         </div>
-        <!--
+
         <img src="img/register.svg" class="image" alt="" />
-        -->
       </div>
     </div>
   </div>

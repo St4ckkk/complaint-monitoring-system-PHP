@@ -33,7 +33,7 @@ $num4 = mysqli_num_rows($result4);
 <body>
     <div class="container">
         <div class="nav">
-            <p>VoxFlow</p>
+            <p>SC-CMS</p>
             <p1>All Complaints:
                 <?php echo $num; ?>
             </p1>
@@ -96,7 +96,7 @@ $num4 = mysqli_num_rows($result4);
                         <tr>
 
                             <td scope="row" class="id">
-                                <?php echo $row['C_Id'] ?>
+                                <?php echo $row['id'] ?>
                             </td>
                             <td scope="row" class="tab">
                                 <?php echo $row['Mob'] ?>
@@ -139,9 +139,9 @@ $num4 = mysqli_num_rows($result4);
                             </tr>
                             <?php
                             }
-                            
+
                     }
-                    
+
                     ?>
                 </tbody>
             </table>

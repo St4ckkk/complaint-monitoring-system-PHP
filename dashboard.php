@@ -12,8 +12,10 @@
 
 <body>
     <div class="container">
+        <img src="img/logo.png" alt="" srcset="" height="200px">
         <div class="nav">
-            <p>VoxFlow</p>
+
+            <p>SC-CMS</p>
             <a href="destroy.php">
                 <button class="logb">
                     Logout

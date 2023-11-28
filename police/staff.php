@@ -27,8 +27,9 @@ $num2 = mysqli_num_rows($result2);
 
 <body>
     <div class="container">
+
         <div class="nav">
-            <p>VoxFlow</p>
+            <p>SC-CMS</p>
             <a href="../destroy.php">
                 <button class="logb">
                     Logout

@@ -5,15 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pending complaints</title>
-    <link rel="stylesheet" href="../complaints/cstyle.css">
+    <link rel="stylesheet" href="../css/complaint.css">
 </head>
 
 <body>
     <div class="container">
         <div class="nav">
-            <p><a href="staff.php" class="hlink">VoxFlow</a></p>
+
+            <p><a href="staff.php" class="hlink">SC-CMS</a></p>
             <p1>Previous Complaints</p1>
-            <a href="../destroy.php"><button class="logb">Logout</button></a>
+            <a href="staff.php"><button class="logb">Return</button></a>
         </div>
         <table class="com-table">
             <thead>
