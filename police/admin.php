@@ -119,7 +119,7 @@ $num4 = mysqli_num_rows($result4);
                             <td scope="row" class="tab">
                                 <?php echo $row['staff'] ?>
                             </td>
-                            <!-- <td scope="row" class="tab"><a href="assign.php?id=<?php //echo $row['C_Id'];?>"><?php //echo $row['staff'] ?></a></td> -->
+
                             <td scope="row" class="tab">
                                 <?php echo $row['status'] ?>
                             </td>
@@ -127,13 +127,13 @@ $num4 = mysqli_num_rows($result4);
                             <?php
                             if ($row['status'] == "Resolved") {
                                 ?>
-                                <td class="tab"><a href="resolved.php?id=<?php echo $row['C_Id']; ?>"><button
+                                <td class="tab"><a href="resolved.php?id=<?php echo $row['id']; ?>"><button
                                             class='alress'>Resolved</button></a></td>
                                 <?php
                             }
                             if ($row['status'] != "Resolved") {
                                 ?>
-                                <td class="tab"><a href="resolved.php?id=<?php echo $row['C_Id']; ?>">
+                                <td class="tab"><a href="resolved.php?id=<?php echo $row['id']; ?>">
                                         <button class='ress'>Resolve</button></a></td>
 
                             </tr>

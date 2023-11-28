@@ -6,15 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="dashb.css" />
-    <link rel="stylesheet" href="complaint.css">
+    <link rel="stylesheet" href="./css/dashboard.css" />
 </head>
 
 <body>
     <div class="container">
-        <img src="img/logo.png" alt="" srcset="" height="200px">
-        <div class="nav">
 
+        <div class="nav">
             <p>SC-CMS</p>
             <a href="destroy.php">
                 <button class="logb">

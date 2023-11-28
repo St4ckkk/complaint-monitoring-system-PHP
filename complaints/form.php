@@ -33,8 +33,8 @@ if (isset($_SESSION['registered-email']) && $_SERVER['REQUEST_METHOD'] === 'POST
   <div class="container">
 
     <div class="nav">
-      <p><a href="../dashboard.php" class="hlink">VoxFlow</a></p>
-      <a href="../logout.php"><button class="logb">Logout</button></a>
+      <p><a href="../dashboard.php" class="hlink">SC-CMS</a></p>
+      <a href="../dashboard.php"><button class="logb">Return</button></a>
     </div>
 
     <form action="form.php" method="post" enctype="multipart/form-data">
@@ -45,18 +45,20 @@ if (isset($_SESSION['registered-email']) && $_SERVER['REQUEST_METHOD'] === 'POST
       </div>
       <div>
         <label for="category">Category:</label>
-        <select id="category" name="category" required>
+        <select name="category" id="category" required>
           <option value="">Select Category</option>
-          <option value="Academic-Issues">Academic Issues</option>
-          <option value="Administrative-Issues">Administrative Issues</option>
-          <option value="Faculty-related-Issues">Faculty-related Issues</option>
-          <option value="Facilities & Infrastructure">Facilities & Infrastructure</option>
-          <option value="Discrimination & Harassment">Discrimination & Harassment</option>
-          <option value="Financial Matters">Financial Matters</option>
-          <option value="Admission and Recruitment">Admission and Recruitment</option>
-          <option value="Safety & Security">Safety & Security</option>
+          <option value="Traffic Violations">Traffic Violations</option>
+          <option value="Criminal Activities">Criminal Activities</option>
+          <option value="Public Disturbance">Public Disturbance</option>
+          <option value="Domestic Incidents">Domestic Incidents</option>
+          <option value="Illegal Substance Use">Illegal Substance Use</option>
+          <option value="Fraud and Scams">Fraud and Scams</option>
+          <option value="Community Relations">Community Relations</option>
+          <option value="Missing Persons">Missing Persons</option>
+          <option value="Property Crimes">Property Crimes</option>
           <option value="Other">Other</option>
         </select>
+
       </div>
       <div>
         <label for="location">Location: (*optional)</label>
