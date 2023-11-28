@@ -6,7 +6,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#LICENSE)
+- [License](Lhttps://github.com/kad-f/South-Cotabato-Complaint-Monitoring-System/blob/main/LICENSE)
 
 ## Introduction
 
