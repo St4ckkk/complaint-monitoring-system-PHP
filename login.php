@@ -34,7 +34,7 @@ if (isset($_SESSION['email'])) {
         session_start();
         $_SESSION['registered-email'] = $pem;
 
-        header('location: user_dashboard.php');
+        header('location: ./user/user_dashboard.php');
     } elseif ($pcode == 'SCstaff') {
         $query1 = "SELECT email, password FROM police WHERE email = ?";
         $stmt = $conn->prepare($query1);

@@ -23,8 +23,8 @@ $num2 = mysqli_num_rows($result2);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Police - Dashboard</title>
-    <link rel="stylesheet" href="../css/police.css">
-    <link rel="shortcut icon" href="../favicon/complaint.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/police.css">
+    <link rel="shortcut icon" href="../assets/favicon/complaint.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -46,7 +46,7 @@ $num2 = mysqli_num_rows($result2);
 
         <div class="dash-main">
             <div class="dash-img">
-                <img src="../img/form.jpg" alt="img">
+                <img src="../assets/img/form.jpg" alt="img">
             </div>
             <div class="dash-all">
                 <p><a href="popo_total_complaints.php">Total Complaints:

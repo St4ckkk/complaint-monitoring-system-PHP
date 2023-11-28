@@ -13,7 +13,7 @@ $num1 = mysqli_num_rows($result);
 
 
 // Fetch the admin's full name from the database
-$adminInfoQuery = "SELECT full_name FROM admin LIMIT 1";    
+$adminInfoQuery = "SELECT full_name FROM admin LIMIT 1";
 $adminInfoResult = mysqli_query($conn, $adminInfoQuery);
 
 // Check if the query was successful and the result is not null
@@ -35,7 +35,7 @@ if ($adminInfoResult && mysqli_num_rows($adminInfoResult) > 0) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Dashboard</title>
-    <link rel="stylesheet" href="../css/police.css">
+    <link rel="stylesheet" href="../assets/css/police.css">
     <link rel="shortcut icon" href="../favicon/complaint.ico" type="image/x-icon">
 </head>
 
@@ -58,7 +58,7 @@ if ($adminInfoResult && mysqli_num_rows($adminInfoResult) > 0) {
 
         <div class="dash-main">
             <div class="dash-img">
-                <img src="../img/logo.png" alt="img">
+                <img src="../assets/img/logo.png" alt="img">
             </div>
             <div class="dash-all">
                 <p class="master"><a href="admin.php">Complaints:
