@@ -17,7 +17,9 @@ $num3 = mysqli_num_rows($result3);
 $result4 = mysqli_query($conn, "SELECT * FROM complaints where staff='Unassigned' AND status='Pending'");
 $num4 = mysqli_num_rows($result4);
 
-
+$sqlStaff = "SELECT * FROM staff";
+$resultStaff = mysqli_query($conn, $sqlStaff);
+$staffMembers = mysqli_fetch_all($resultStaff, MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +29,7 @@ $num4 = mysqli_num_rows($result4);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Dashboard</title>
     <link rel="stylesheet" href="../css/police.css">
+    <link rel="shortcut icon" href="../favicon/complaint.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 </head>
 
@@ -117,31 +120,55 @@ $num4 = mysqli_num_rows($result4);
                                 <?php echo $row['Reg_time'] ?>
                             </td>
                             <td scope="row" class="tab">
-                                <?php echo $row['staff'] ?>
-                            </td>
-
-                            <td scope="row" class="tab">
-                                <?php echo $row['status'] ?>
-                            </td>
-
-                            <?php
-                            if ($row['status'] == "Resolved") {
-                                ?>
-                                <td class="tab"><a href="resolved.php?id=<?php echo $row['id']; ?>"><button
-                                            class='alress'>Resolved</button></a></td>
                                 <?php
-                            }
-                            if ($row['status'] != "Resolved") {
+                                if ($row['staff'] == 'Unassigned') {
+                                    // Display dropdown for assigning police
+                                    ?>
+                                    <form action="assign.php" method="post">
+                                        <input type="hidden" name="complaint_id" value="<?php echo $row['id']; ?>">
+                                        <select name="staff_id">
+                                            <?php foreach ($staffMembers as $staff): ?>
+                                                <option value="<?php echo $staff['id']; ?>">
+                                                    <?php echo $staff['name']; ?>
+                                                </option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                        <button type="submit" class="ress">Assign</button>
+                                    </form>
+                                    <?php
+                                } else {
+                                    // Display assigned staff name
+                                    $assignedStaffQuery = "SELECT name FROM staff WHERE name = '{$row['staff']}'";
+                                    $assignedStaffResult = mysqli_query($conn, $assignedStaffQuery);
+                                    $assignedStaffInfo = mysqli_fetch_assoc($assignedStaffResult);
+
+                                    $assignedStaffInfo = $assignedStaffInfo ?? [];
+
+                                    if ($assignedStaffInfo) {
+
+                                        echo $assignedStaffInfo['name'];
+                                    } else {
+
+                                        echo "Unassigned";
+                                    }
+                                }
                                 ?>
-                                <td class="tab"><a href="resolved.php?id=<?php echo $row['id']; ?>">
-                                        <button class='ress'>Resolve</button></a></td>
+                            </td>
 
-                            </tr>
-                            <?php
-                            }
 
+                            <td class="tab" colspan="2">
+                                <!-- Display Resolve button -->
+                                <?php if ($row['status'] == "Resolved"): ?>
+                                    <a href="resolved.php?id=<?php echo $row['id']; ?>"><button
+                                            class='alress'>Resolved</button></a>
+                                <?php else: ?>
+                                    <a href="resolved.php?id=<?php echo $row['id']; ?>"><button
+                                            class='ress'>Resolve</button></a>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                        <?php
                     }
-
                     ?>
                 </tbody>
             </table>

@@ -4,6 +4,7 @@ require_once '../database/connection.php';
 
 $em = $_SESSION['name'];
 
+
 $result = mysqli_query($conn, "SELECT * FROM complaints where staff= '$em' ");
 $num = mysqli_num_rows($result);
 
@@ -21,8 +22,9 @@ $num2 = mysqli_num_rows($result2);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Police - Dashboard</title>
     <link rel="stylesheet" href="../css/police.css">
+    <link rel="shortcut icon" href="../favicon/complaint.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -30,7 +32,7 @@ $num2 = mysqli_num_rows($result2);
 
         <div class="nav">
             <p>SC-CMS</p>
-            <a href="../destroy.php">
+            <a href="../logout.php">
                 <button class="logb">
                     Logout
                 </button>

@@ -13,7 +13,7 @@
         <div class="nav">
             <p><a href="staff.php" class="hlink">SC-CMS</a></p>
             <p1>All Complaints</p1>
-            <a href="../destroy.php"><button class="logb">Logout</button></a>
+            <a href="../police/staff.php"><button class="logb">Return</button></a>
         </div>
         <table class="com-table">
             <thead>
