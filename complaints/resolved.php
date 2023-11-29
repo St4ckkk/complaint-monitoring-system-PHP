@@ -12,7 +12,8 @@ $trimmedMail = $_SESSION['registered-email'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/complaint.css" />
-    <title>Resolved Complaints</title>
+    <link rel="shortcut icon" href="../assets/favicon/complaint.ico" type="image/x-icon">
+    <title>SC-CMS Resolved Complaints</title>
 </head>
 
 <body>
