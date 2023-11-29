@@ -34,9 +34,9 @@ if ($adminInfoResult && mysqli_num_rows($adminInfoResult) > 0) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Dashboard</title>
+    <title>SC-CIMS Admin | Dashboard</title>
     <link rel="stylesheet" href="../assets/css/police.css">
-    <link rel="shortcut icon" href="../favicon/complaint.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/favicon/complaint.ico" type="image/x-icon">
 </head>
 
 <body>

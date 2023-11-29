@@ -16,7 +16,7 @@
 
       <div class="signin-signup">
 
-        <form action="login.php" class="sign-in-form" method="post">
+        <form action="partials/login.php" class="sign-in-form" method="post">
           <img src="assets/img/logo.png" alt="" srcset="" height="200px">
           <h2 class="title">Sign in</h2>
           <div class="input-field">
@@ -33,7 +33,7 @@
           </div>
           <input type="submit" value="Login" class="btn solid" />
         </form>
-        <form action="login.php" class="sign-up-form" method="post">
+        <form action="partials/login.php" class="sign-up-form" method="post">
           <img src="assets/img/logo.png" alt="" srcset="" height="200px">
           <h2 class="title">Sign up</h2>
           <div class="input-field">

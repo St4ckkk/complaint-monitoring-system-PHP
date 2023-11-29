@@ -61,7 +61,7 @@ if (isset($_SESSION['registered-email']) && $_SERVER['REQUEST_METHOD'] === 'POST
 
       </div>
       <div>
-        <label for="location">Location: (*optional)</label>
+        <label for="location">Location: </label>
         <input type="text" id="location" name="location">
       </div>
       <div>

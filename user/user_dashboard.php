@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="shortcut icon" href="../favicon/complaint.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../assets/css/dashboard.css" />
+    <link rel="shortcut icon" href="../assets/favicon/complaint.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/user_dashboard.css" />
 </head>
 
 <body>
@@ -15,7 +15,7 @@
 
         <div class="nav">
             <p>SC-CMS</p>
-            <a href="../logout.php">
+            <a href="../partials/logout.php">
                 <button class="logb">
                     Logout
                 </button>

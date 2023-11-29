@@ -1,6 +1,6 @@
 <?php
 
-require_once './database/connection.php';
+require_once '../database/connection.php';
 
 session_start();
 
@@ -14,7 +14,7 @@ if (isset($_SESSION['email'])) {
 
     session_start();
     $_SESSION['email'] = $sem;
-    header('location:index.php');
+    header('location: index.php');
 
 } elseif (isset($_POST['registered-email'])) {
     $pem = $_POST['registered-email'];
@@ -34,7 +34,7 @@ if (isset($_SESSION['email'])) {
         session_start();
         $_SESSION['registered-email'] = $pem;
 
-        header('location: ./user/user_dashboard.php');
+        header('location: ../user/user_dashboard.php');
     } elseif ($pcode == 'SCstaff') {
         $query1 = "SELECT email, password FROM police WHERE email = ?";
         $stmt = $conn->prepare($query1);
@@ -57,7 +57,7 @@ if (isset($_SESSION['email'])) {
             session_start();
             $_SESSION['registered-email'] = $pem;
             $_SESSION['name'] = $dbname;
-            header('location:./police/police_dashboard.php');
+            header('location:../police/police_dashboard.php');
         }
 
     } else {
