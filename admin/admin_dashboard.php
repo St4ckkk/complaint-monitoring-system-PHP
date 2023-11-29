@@ -65,7 +65,7 @@ if ($adminInfoResult && mysqli_num_rows($adminInfoResult) > 0) {
                         <?php echo $num; ?>
                     </a>
                 </p>
-                <p><a href="">Police:
+                <p><a href="popo.php">Police:
                         <?php echo $num1; ?>
                     </a>
                 </p>
