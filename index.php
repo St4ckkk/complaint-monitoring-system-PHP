@@ -38,9 +38,6 @@
           <div class="input-field">
             <i class="fas fa-envelope"></i>
             <input type="email" placeholder="Email" name="email" id="email" required />
-            <span class="eye-icon" onclick="togglePasswordVisibility()">
-              <img id="eye-image" src="./assets/img/eye.png" height="20" alt="Toggle Password Visibility" />
-            </span>
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
