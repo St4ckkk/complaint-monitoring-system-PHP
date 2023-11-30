@@ -25,7 +25,7 @@
                     <th>Priority</th>
                     <th>Description</th>
                     <th>Time of Registration</th>
-                    <th>Staff</th>
+                    <th>Police</th>
                     <th colspan="2">Status</th>
                 </tr>
             </thead>

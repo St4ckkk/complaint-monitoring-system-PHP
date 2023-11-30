@@ -19,16 +19,37 @@ function showMessage($message, $isError = false)
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['add'])) {
         // Add new police record
-        // ... (Add your code to insert a new police record into the database)
-        showMessage('Police record added successfully.');
+        $name = mysqli_real_escape_string($conn, $_POST['name']);
+        $badge_number = mysqli_real_escape_string($conn, $_POST['badge_number']);
+
+        $addPoliceQuery = "INSERT INTO police (name, badge_number) VALUES ('$name', '$badge_number')";
+        if (mysqli_query($conn, $addPoliceQuery)) {
+            showMessage('Police record added successfully.');
+        } else {
+            showMessage('Error adding police record.', true);
+        }
     } elseif (isset($_POST['edit'])) {
         // Edit existing police record
-        // ... (Add your code to update an existing police record in the database)
-        showMessage('Police record updated successfully.');
+        $police_id = mysqli_real_escape_string($conn, $_POST['police_id']);
+        $name = mysqli_real_escape_string($conn, $_POST['name']);
+        $badge_number = mysqli_real_escape_string($conn, $_POST['badge_number']);
+
+        $editPoliceQuery = "UPDATE police SET name='$name', badge_number='$badge_number' WHERE id='$police_id'";
+        if (mysqli_query($conn, $editPoliceQuery)) {
+            showMessage('Police record updated successfully.');
+        } else {
+            showMessage('Error updating police record.', true);
+        }
     } elseif (isset($_POST['delete'])) {
         // Delete police record
-        // ... (Add your code to delete a police record from the database)
-        showMessage('Police record deleted successfully.');
+        $police_id = mysqli_real_escape_string($conn, $_POST['police_id']);
+
+        $deletePoliceQuery = "DELETE FROM police WHERE id='$police_id'";
+        if (mysqli_query($conn, $deletePoliceQuery)) {
+            showMessage('Police record deleted successfully.');
+        } else {
+            showMessage('Error deleting police record.', true);
+        }
     }
 }
 
@@ -36,6 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $result = mysqli_query($conn, "SELECT * FROM police");
 $num = mysqli_num_rows($result);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -73,12 +95,14 @@ $num = mysqli_num_rows($result);
             ?>
 
             <!-- Display the list of police records -->
-            <table>
+            <table class="com-table">
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
                     <th>Badge Number</th>
-                    <!-- Add more columns as needed -->
+
                     <th>Actions</th>
                 </tr>
 
@@ -89,6 +113,12 @@ $num = mysqli_num_rows($result);
                         </td>
                         <td>
                             <?php echo $row['name']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['email']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['password']; ?>
                         </td>
                         <td>
                             <?php echo $row['badge_number']; ?>
@@ -113,6 +143,8 @@ $num = mysqli_num_rows($result);
                 <!-- Add input fields for the new police record -->
                 <label for="name">Name:</label>
                 <input type="text" name="name" required>
+                <label for="name">Email:</label>
+                <input type="text" name="email" required>
                 <label for="badge_number">Badge Number:</label>
                 <input type="text" name="badge_number" required>
 
