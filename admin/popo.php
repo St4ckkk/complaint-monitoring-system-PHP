@@ -83,17 +83,6 @@ $num = mysqli_num_rows($result);
         </div>
 
         <div class="dash-main">
-            <h2>Police Records</h2>
-
-            <!-- Display success/error messages -->
-            <?php
-            if (isset($_SESSION['message'])) {
-                showMessage($_SESSION['message'], isset($_SESSION['error']));
-                unset($_SESSION['message']);
-                unset($_SESSION['error']);
-            }
-            ?>
-
             <!-- Display the list of police records -->
             <table class="com-table">
                 <tr>
@@ -123,13 +112,13 @@ $num = mysqli_num_rows($result);
                         <td>
                             <?php echo $row['badge_number']; ?>
                         </td>
-                        <!-- Add more columns as needed -->
-
-                        <!-- Action buttons for each record -->
                         <td>
-                            <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                            <form method="POST" action="edit_popo.php" style="display: inline-block;">
                                 <input type="hidden" name="police_id" value="<?php echo $row['id']; ?>">
                                 <input type="submit" name="edit" value="Edit">
+                            </form>
+                            <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>" style="display: inline-block;">
+                                <input type="hidden" name="police_id" value="<?php echo $row['id']; ?>">
                                 <input type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure?')">
                             </form>
                         </td>
@@ -137,21 +126,7 @@ $num = mysqli_num_rows($result);
                 <?php endwhile; ?>
             </table>
 
-            <!-- Form for adding a new police record -->
-            <h3>Add New Police Record</h3>
-            <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                <!-- Add input fields for the new police record -->
-                <label for="name">Name:</label>
-                <input type="text" name="name" required>
-                <label for="name">Email:</label>
-                <input type="text" name="email" required>
-                <label for="badge_number">Badge Number:</label>
-                <input type="text" name="badge_number" required>
 
-                <!-- Add more input fields as needed -->
-
-                <input type="submit" name="add" value="Add">
-            </form>
         </div>
     </div>
 </body>
