@@ -35,7 +35,7 @@ if (isset($_SESSION['registered-email']) && $_SERVER['REQUEST_METHOD'] === 'POST
 
     <div class="nav">
       <p><a href="../dashboard.php" class="hlink">SC-CMS</a></p>
-      <a href="../dashboard.php"><button class="logb">Return</button></a>
+      <a href="../user/user_dashboard.php"><button class="logb">Return</button></a>
     </div>
 
     <form action="form.php" method="post" enctype="multipart/form-data">

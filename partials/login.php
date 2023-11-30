@@ -6,11 +6,13 @@ session_start();
 
 if (isset($_SESSION['email'])) {
     header('location: index.php');
+
 } elseif (isset($_POST['email'])) {
     $sem = $_POST['email'];
+    $fullName = $_POST['full_name'];
     $spass = $_POST['password'];
 
-    $sql = mysqli_query($conn, "INSERT INTO users (email, upassword, joining_date) VALUES ('$sem', '$spass', current_timestamp())");
+    $sql = mysqli_query($conn, "INSERT INTO users (name, email, upassword, joining_date) VALUES ('$fullName','$sem', '$spass', current_timestamp())");
 
     session_start();
     $_SESSION['email'] = $sem;

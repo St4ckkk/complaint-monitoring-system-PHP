@@ -21,7 +21,7 @@ $trimmedMail = $_SESSION['registered-email'];
         <div class="nav">
             <p><a href="../dashboard.php" class="hlink">SC-CMS</a></p>
             <p>Resolved Complaints</p>
-            <a href="../dashboard.php"><button class="logb">Return</button></a>
+            <a href="../user/user_dashboard.php"><button class="logb">Return</button></a>
         </div>
         <table class="com-table">
             <thead>

@@ -28,13 +28,18 @@
           </div>
           <div class="input-field">
             <i class="fas fa-key"></i>
-            <input type="password" placeholder="Badge number(Police Staff only)" name="badge_number" id="badge_number" />
+            <input type="password" placeholder="Badge number(Police Staff only)" name="badge_number"
+              id="badge_number" />
           </div>
           <input type="submit" value="Login" class="btn solid" />
         </form>
         <form action="partials/login.php" class="sign-up-form" method="post">
           <img src="assets/img/logo.png" alt="" srcset="" height="200px" />
           <h2 class="title">Sign up</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Full Name" name="full_name" id="full_name" required />
+          </div>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
             <input type="email" placeholder="Email" name="email" id="email" required />

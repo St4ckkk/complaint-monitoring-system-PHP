@@ -32,7 +32,7 @@ $num2 = mysqli_num_rows($result2);
 
         <div class="nav">
             <p>SC-CMS</p>
-            <a href="../logout.php">
+            <a href="../partials/logout.php">
                 <button class="logb">
                     Logout
                 </button>

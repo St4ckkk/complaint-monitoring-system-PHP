@@ -8,21 +8,16 @@ $em = $_SESSION['name'];
 $result = mysqli_query($conn, "SELECT * FROM complaints");
 $num = mysqli_num_rows($result);
 $result1 = mysqli_query($conn, "SELECT * FROM police");
-$num1 = mysqli_num_rows($result);
+$num1 = mysqli_num_rows($result1);
 
-
-
-// Fetch the admin's full name from the database
 $adminInfoQuery = "SELECT full_name FROM admin LIMIT 1";
 $adminInfoResult = mysqli_query($conn, $adminInfoQuery);
 
-// Check if the query was successful and the result is not null
 if ($adminInfoResult && mysqli_num_rows($adminInfoResult) > 0) {
-    // Assuming the admin table has a column 'full_name'
+
     $adminInfo = mysqli_fetch_assoc($adminInfoResult);
     $adminFullName = $adminInfo['full_name'];
 } else {
-    // If there is no direct login for admin, display a generic welcome message or any other relevant information
     $adminFullName = "Administrator";
 }
 
