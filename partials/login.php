@@ -19,8 +19,7 @@ if (isset($_SESSION['email'])) {
 } elseif (isset($_POST['registered-email'])) {
     $pem = $_POST['registered-email'];
     $ppass = $_POST['registered-password'];
-
-    $pcode = $_POST['code'];
+    $badgeNumber = $_POST['badge_number'];
 
     $query = "SELECT email, upassword FROM users WHERE email = ?";
     $stmt = $conn->prepare($query);
@@ -35,12 +34,12 @@ if (isset($_SESSION['email'])) {
         $_SESSION['registered-email'] = $pem;
 
         header('location: ../user/user_dashboard.php');
-    } elseif ($pcode == 'SCstaff') {
-        $query1 = "SELECT email, password FROM police WHERE email = ?";
+    } elseif (!empty($badgeNumber)) {
+        $query1 = "SELECT email, password, badge_number FROM police WHERE email = ?";
         $stmt = $conn->prepare($query1);
         $stmt->bind_param("s", $pem);
         $stmt->execute();
-        $stmt->bind_result($dbemail1, $dbpassword1);
+        $stmt->bind_result($dbemail1, $dbpassword1, $dbBadgeNumber);
         $stmt->fetch();
         $stmt->close();
 

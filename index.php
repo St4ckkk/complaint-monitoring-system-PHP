@@ -28,7 +28,7 @@
           </div>
           <div class="input-field">
             <i class="fas fa-key"></i>
-            <input type="password" placeholder="Code(Police Staff only)" name="code" id="code" />
+            <input type="password" placeholder="Badge number(Police Staff only)" name="badge_number" id="badge_number" />
           </div>
           <input type="submit" value="Login" class="btn solid" />
         </form>
