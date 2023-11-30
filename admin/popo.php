@@ -82,8 +82,10 @@ $num = mysqli_num_rows($result);
             </a>
         </div>
 
-        <div class="dash-main">
-            <!-- Display the list of police records -->
+        <div class="content">
+            <div class="con-updates">
+                <p>Add Police <i class="fas fa-angle-down"></i></p>
+            </div>
             <table class="com-table">
                 <tr>
                     <th>ID</th>

@@ -67,6 +67,7 @@ form.sign-in-form {
 }
 
 .input-field {
+  position: relative;
   max-width: 380px;
   width: 100%;
   background-color: #f0f0f0;
@@ -78,7 +79,20 @@ form.sign-in-form {
   padding: 0 0.4rem;
   position: relative;
 }
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
 
+/* Style for the eye image */
+#eye-image {
+  width: 20px;
+  height: auto;
+  display: block;
+}
 .input-field i {
   text-align: center;
   line-height: 55px;

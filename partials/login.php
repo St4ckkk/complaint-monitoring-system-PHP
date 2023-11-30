@@ -5,7 +5,7 @@ require_once '../database/connection.php';
 session_start();
 
 if (isset($_SESSION['email'])) {
-    header('location:dashboard.php');
+    header('location:  index.php');
 } elseif (isset($_POST['email'])) {
     $sem = $_POST['email'];
     $spass = $_POST['password'];

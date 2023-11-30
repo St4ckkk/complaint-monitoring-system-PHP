@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="style.css" />
   <link rel="shortcut icon" href="assets/favicon/complaint.ico" type="image/x-icon" />
   <title>SC-CMS</title>
 </head>
@@ -13,11 +13,9 @@
 <body>
   <div class="container">
     <div class="forms-container">
-
       <div class="signin-signup">
-
         <form action="partials/login.php" class="sign-in-form" method="post">
-          <img src="assets/img/logo.png" alt="" srcset="" height="200px">
+          <img src="assets/img/logo.png" alt="" srcset="" height="200px" />
           <h2 class="title">Sign in</h2>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
@@ -26,6 +24,9 @@
           <div class="input-field">
             <i class="fas fa-lock"></i>
             <input type="password" placeholder="Password" name="registered-password" id="password" required />
+            <span class="eye-icon" onclick="togglePasswordVisibility('password', 'eye-image-signin', 'signin')">
+              <img id="eye-image-signin" src="./assets/img/eye.png" height="20" alt="Toggle Password Visibility" />
+            </span>
           </div>
           <div class="input-field">
             <i class="fas fa-key"></i>
@@ -34,7 +35,7 @@
           <input type="submit" value="Login" class="btn solid" />
         </form>
         <form action="partials/login.php" class="sign-up-form" method="post">
-          <img src="assets/img/logo.png" alt="" srcset="" height="200px">
+          <img src="assets/img/logo.png" alt="" srcset="" height="200px" />
           <h2 class="title">Sign up</h2>
           <div class="input-field">
             <i class="fas fa-envelope"></i>
@@ -43,6 +44,9 @@
           <div class="input-field">
             <i class="fas fa-lock"></i>
             <input type="password" placeholder="Password" name="password" id="password" required />
+            <span class="eye-icon" onclick="togglePasswordVisibilitySignup('password', 'eye-image-signup', 'signup')">
+              <img id="eye-image-signup" src="./assets/img/eye.png" height="20" alt="Toggle Password Visibility" />
+            </span>
           </div>
           <input type="submit" class="btn" value="Sign up" />
         </form>
@@ -91,6 +95,37 @@
     sign_in_btn.addEventListener('click', () => {
       container.classList.remove('sign-up-mode');
     });
+
+    function togglePasswordVisibility(inputId, eyeIconId, formType) {
+      var passwordInput = document.getElementById(inputId);
+      var eyeIcon = document.getElementById(eyeIconId);
+
+      passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+
+      eyeIcon.src =
+        passwordInput.type === 'password'
+          ? 'assets/img/eye.png'
+          : 'assets/img/hide.png';
+
+      eyeIcon.alt =
+        passwordInput.type === 'password' ? 'Show Password' : 'Hide Password';
+
+    }
+    function togglePasswordVisibilitySignup(inputId, eyeIconId, formType) {
+      var passwordInput = document.getElementById(inputId);
+      var eyeIcon = document.getElementById(eyeIconId);
+
+      passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
+
+      eyeIcon.src =
+        passwordInput.type === 'password'
+          ? 'assets/img/eye.png'
+          : 'assets/img/hide.png';
+
+      eyeIcon.alt =
+        passwordInput.type === 'password' ? 'Show Password' : 'Hide Password';
+
+    }
   </script>
 </body>
 

@@ -28,7 +28,6 @@ if (isset($_POST['update'])) {
     $updatePoliceQuery = "UPDATE police SET name='$name', badge_number='$badge_number', email='$email', password='$password' WHERE id='$police_id'";
     if (mysqli_query($conn, $updatePoliceQuery)) {
         echo "<script>alert('Police record updated successfully.'); window.location.href='edit_popo.php';</script>";
-        header('Location: popo.php');
     } else {
         showMessage('Error updating police record.', true);
     }
@@ -53,6 +52,9 @@ if (isset($_POST['update'])) {
 
         <div class="nav">
             <p>SC-CMS</p>
+            <a href="add_popo.php"> <!-- Added link to add_popo.php -->
+                <button class="logb">Add Police</button>
+            </a>
             <a href="../dashboard.php">
                 <button class="logb">Return</button>
             </a>
