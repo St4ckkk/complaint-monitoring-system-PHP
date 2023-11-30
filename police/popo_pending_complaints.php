@@ -22,7 +22,7 @@
                     <th>Complaint ID</th>
                     <th>Mobile No.</th>
                     <th>Category</th>
-                    <th>Location</th>
+                    <th>Location</th>   
                     <th>Priority</th>
                     <th>Description</th>
                     <th>Time of Registration</th>

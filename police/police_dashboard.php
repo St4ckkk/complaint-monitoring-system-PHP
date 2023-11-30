@@ -46,7 +46,7 @@ $num2 = mysqli_num_rows($result2);
 
         <div class="dash-main">
             <div class="dash-img">
-                <img src="../assets/img/form.jpg" alt="img">
+                <img src="../assets/img/Logo-of-SouthCot-Logo.png" alt="img">
             </div>
             <div class="dash-all">
                 <p><a href="popo_total_complaints.php">Total Complaints:
