@@ -52,10 +52,7 @@ if (isset($_POST['update'])) {
 
         <div class="nav">
             <p>SC-CMS</p>
-            <a href="add_popo.php"> <!-- Added link to add_popo.php -->
-                <button class="logb">Add Police</button>
-            </a>
-            <a href="../dashboard.php">
+            <a href="popo.php">
                 <button class="logb">Return</button>
             </a>
         </div>

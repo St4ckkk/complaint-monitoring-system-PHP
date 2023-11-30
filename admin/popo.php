@@ -69,23 +69,30 @@ $num = mysqli_num_rows($result);
     <link rel="stylesheet" href="../assets/css/police.css">
     <link rel="shortcut icon" href="../assets/favicon/complaint.ico" type="image/x-icon">
 </head>
+<style>
+</style>
 
 <body>
     <div class="container">
 
         <div class="nav">
             <p>SC-CMS</p>
-            <a href="../partials/logout.php">
+            <a href="admin_dashboard.php">
                 <button class="logb">
-                    Logout
+                    Return
                 </button>
             </a>
         </div>
 
         <div class="content">
-            <div class="con-updates">
+            <div class="con-updates" onclick="goToAddPolice()">
                 <p>Add Police <i class="fas fa-angle-down"></i></p>
             </div>
+            <script>
+                function goToAddPolice() {
+                    window.location.href = "add_popo.php";
+                }
+            </script>
             <table class="com-table">
                 <tr>
                     <th>ID</th>

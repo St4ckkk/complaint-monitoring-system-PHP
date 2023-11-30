@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="shortcut icon" href="assets/favicon/complaint.ico" type="image/x-icon" />
   <title>SC-CMS</title>
 </head>
@@ -24,9 +24,7 @@
           <div class="input-field">
             <i class="fas fa-lock"></i>
             <input type="password" placeholder="Password" name="registered-password" id="password" required />
-            <span class="eye-icon" onclick="togglePasswordVisibility('password', 'eye-image-signin', 'signin')">
-              <img id="eye-image-signin" src="./assets/img/eye.png" height="20" alt="Toggle Password Visibility" />
-            </span>
+
           </div>
           <div class="input-field">
             <i class="fas fa-key"></i>
@@ -40,13 +38,14 @@
           <div class="input-field">
             <i class="fas fa-envelope"></i>
             <input type="email" placeholder="Email" name="email" id="email" required />
+            <span class="eye-icon" onclick="togglePasswordVisibility()">
+              <img id="eye-image" src="./assets/img/eye.png" height="20" alt="Toggle Password Visibility" />
+            </span>
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
             <input type="password" placeholder="Password" name="password" id="password" required />
-            <span class="eye-icon" onclick="togglePasswordVisibilitySignup('password', 'eye-image-signup', 'signup')">
-              <img id="eye-image-signup" src="./assets/img/eye.png" height="20" alt="Toggle Password Visibility" />
-            </span>
+
           </div>
           <input type="submit" class="btn" value="Sign up" />
         </form>
@@ -82,7 +81,6 @@
       </div>
     </div>
   </div>
-
   <script>
     const sign_in_btn = document.querySelector('#sign-in-btn');
     const sign_up_btn = document.querySelector('#sign-up-btn');
@@ -96,37 +94,8 @@
       container.classList.remove('sign-up-mode');
     });
 
-    function togglePasswordVisibility(inputId, eyeIconId, formType) {
-      var passwordInput = document.getElementById(inputId);
-      var eyeIcon = document.getElementById(eyeIconId);
-
-      passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
-
-      eyeIcon.src =
-        passwordInput.type === 'password'
-          ? 'assets/img/eye.png'
-          : 'assets/img/hide.png';
-
-      eyeIcon.alt =
-        passwordInput.type === 'password' ? 'Show Password' : 'Hide Password';
-
-    }
-    function togglePasswordVisibilitySignup(inputId, eyeIconId, formType) {
-      var passwordInput = document.getElementById(inputId);
-      var eyeIcon = document.getElementById(eyeIconId);
-
-      passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
-
-      eyeIcon.src =
-        passwordInput.type === 'password'
-          ? 'assets/img/eye.png'
-          : 'assets/img/hide.png';
-
-      eyeIcon.alt =
-        passwordInput.type === 'password' ? 'Show Password' : 'Hide Password';
-
-    }
   </script>
+
 </body>
 
 </html>

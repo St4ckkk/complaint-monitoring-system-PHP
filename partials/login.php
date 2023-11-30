@@ -5,7 +5,7 @@ require_once '../database/connection.php';
 session_start();
 
 if (isset($_SESSION['email'])) {
-    header('location:  index.php');
+    header('location: index.php');
 } elseif (isset($_POST['email'])) {
     $sem = $_POST['email'];
     $spass = $_POST['password'];
@@ -63,39 +63,17 @@ if (isset($_SESSION['email'])) {
     } else {
         if ($dbemail == null) {
             ?>
-            <!DOCTYPE html>
-            <html lang="en">
-
-            <head>
-                <meta charset="UTF-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Unsuccessful</title>
-            </head>
-
-            <body>
-                <a href="index.php">Return</a>
-                <script>alert("Theres no account with this Email. Sign-in");</script>
-            </body>
-
-            </html>
+            echo '
+            <script>
+                alert("There\'s no account with this Email. Sign-in");
+                window.location.href = "index.php"; // Adjust the URL as needed
+            </script>';
         <?php } else { ?>
-            <!DOCTYPE html>
-            <html lang="en">
-
-            <head>
-                <meta charset="UTF-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Unsuccessful</title>
-            </head>
-
-            <body>
-                <a href="index.php">Return</a>
-                <script>alert("Incorrect Username or Password");</script>
-            </body>
-
-            </html>
+            echo '
+            <script>
+                alert("Incorrect Username or Password");
+                window.location.href = "index.php"; // Adjust the URL as needed
+            </script>';
 
             <?php
         }

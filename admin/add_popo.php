@@ -37,17 +37,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add'])) {
     <link rel="stylesheet" href="../assets/css/complaint.css">
     <link rel="shortcut icon" href="../assets/favicon/complaint.ico" type="image/x-icon">
 </head>
+<style>
+    img {
+        display: block;
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+</style>
 
 <body>
     <div class="container">
 
         <div class="nav">
             <p>SC-CMS</p>
-            <a href="../dashboard.php">
+            <a href="popo.php">
                 <button class="logb">Return</button>
             </a>
         </div>
-
+        <img src="../assets/img/PNP_-_South_Cotabato_PPO_29-removebg-preview.png" width="100px" height="100px" alt=""
+            srcset="">
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
             <div>
@@ -66,9 +77,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add'])) {
                 <label for="password">Password:</label>
                 <input type="text" id="password" name="password" required>
             </div>
-
-            <!-- Add more input fields as needed -->
-
             <div>
                 <input type="submit" name="add" value="Add">
             </div>
